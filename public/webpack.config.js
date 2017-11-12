@@ -6,7 +6,7 @@ module.exports = function (env) {
 
     const options = require("./config/" + env + ".config.json");
     const commonConfig = require("./webpack/webpack.common.js")(options);
-    const envConfig = require("./webpack/webpack." + env + ".js")(options);
+    const envConfig = require("./webpack/webpack." + (env != "dev" ? "prod" : "dev") + ".js")(options);
     
     return webpackMerge(commonConfig, envConfig);
 }
