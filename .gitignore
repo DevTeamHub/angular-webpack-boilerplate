@@ -190,4 +190,4 @@ ModelManifest.xml
 NewDevTeam/css/
 NewDevTeam/.idea/
 /.idea/
-/bin/
+dist/

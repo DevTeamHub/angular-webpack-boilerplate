@@ -11,14 +11,13 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = function (options) {
     return {
         entry: {
-            polyfills: "./public/src/polyfills",
-            vendor: "./public/src/vendor",
-            main: "./public/src/main"
+            polyfills: "./src/polyfills",
+            vendor: "./src/vendor",
+            main: "./src/main.browser"
         },
         output: {
-            path: path.resolve(__dirname, '../../public/bin/dist'),
-            filename: "[name].[chunkhash].bundle.js",
-            sourceMapFilename: "[name].[chunkhash].map"
+            path: path.resolve(__dirname, '../../dist/browser'),
+            filename: "[name].[chunkhash].bundle.js"
         },
         module: {
             rules: [
@@ -71,7 +70,7 @@ module.exports = function (options) {
         },
         plugins: [
             new tools.AngularCompilerPlugin({
-                tsConfigPath: "./tsconfig.json",
+                tsConfigPath: "./public/tsconfig.browser.json",
                 entryModule: './public/src/app/app.module#AppModule'              
             }),
             new optimizer.PurifyPlugin(),

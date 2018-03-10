@@ -3,41 +3,55 @@ const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const multi = require("multi-loader");
 
 module.exports = function (options) {
     return {
+        context: path.resolve(__dirname, ".."),
         module: {
             rules: [
-                { 
-                    test: /\.(png|jpg|woff|woff2|ttf|eot|svg)$/, 
+                {
+                    test: /\.(eot|svg|cur)$/,
+                    loader: 'file-loader',
+                },
+                {
+                    test: /\.(jpg|png|webp|gif|otf|ttf|woff|woff2|ani)$/,
                     use: [
-                        { loader: "file-loader" }
-                    ] 
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit: 10000
+                            }
+                        },
+                        {
+                            loader: "webp-loader?{quality: 95}"
+                        }
+                    ]
                 }
-            ] 
+            ]
         },
         plugins: [
 
-            new HtmlWebpackPlugin({ 
-                template: "./public/src/index.html",
+            new HtmlWebpackPlugin({
+                template: "./src/index.html",
                 minify: options.minify ? {
                     caseSensitive: true,
                     collapseWhitespace: true,
                     keepClosingSlash: true
                 } : null,
-                chunksSortMode: function(a, b) { 
-                    var order = ["polyfills", "angular-chunk", "vendor", "main"]; 
-                    return order.indexOf(a.names[0]) - order.indexOf(b.names[0]); 
-                } 
+                chunksSortMode: function (a, b) {
+                    var order = ["polyfills", "angular-chunk", "vendor", "main"];
+                    return order.indexOf(a.names[0]) - order.indexOf(b.names[0]);
+                }
             }),
 
-            new CopyWebpackPlugin([{ from: "./public/src/img", to: "./img" },
-                                   { from: "./public/src/fonts", to: "./fonts" }]),
+            new CopyWebpackPlugin([{ from: "./src/img", to: "./img" },
+                                   { from: "./src/fonts", to: "./fonts" }]),
 
-            new webpack.optimize.CommonsChunkPlugin({ 
-                 name: "angular-chunk", 
-                 filename: "angular-chunk.js", 
-                 chunks: ["main", "vendor"] 
+            new webpack.optimize.CommonsChunkPlugin({
+                name: "angular-chunk",
+                filename: "angular-chunk.js",
+                chunks: ["main", "vendor"]
             }),
 
             new webpack.DefinePlugin({ configuration: helpers.parseConfig(options) })

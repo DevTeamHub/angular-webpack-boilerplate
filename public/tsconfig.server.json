@@ -1,0 +1,16 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "../dist/server",
+      "baseUrl": "./src"
+    },
+    "exclude": [
+      "node_modules/*",
+      "public/src/main.browser.ts"
+    ],
+    "angularCompilerOptions": {
+      "entryModule": "public/src/app/app.server.module#AppServerModule"
+    }
+  }
