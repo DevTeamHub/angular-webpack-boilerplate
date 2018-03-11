@@ -1,0 +1,24 @@
+html {
+    font-size: 62.5%;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .clearfix::before,
+  .clearfix::after {
+    @include clearfix;
+  }
+  
+  body {
+    line-height: 1;
+  }
+  @-ms-viewport{
+    width:auto!important;
+  }
+  
