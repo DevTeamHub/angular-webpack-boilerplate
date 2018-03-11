@@ -1,6 +1,6 @@
 
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/DevTeamHub/angular-webpack-boilerplate/compare/1.0.0...0.0.1) (2018-03-10)
+# [1.0.0](https://github.com/DevTeamHub/angular-webpack-boilerplate/compare/0.0.1...1.0.0) (2018-03-10)
 
 ### Features
 
