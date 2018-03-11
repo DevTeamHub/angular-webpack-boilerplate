@@ -20,6 +20,7 @@
     "build:express": "webpack --config server/webpack.config.js",
     "build:universal": "npm run build:server && npm run build:express",
     "build:release": "npm run build:prod && npm run build:universal",
+    "server": "node dist/index.js",
     "start": "webpack-dev-server --env=dev --config public/webpack.config.js --progress --profile --watch --content-base public/src/"
   },
   "dependencies": {

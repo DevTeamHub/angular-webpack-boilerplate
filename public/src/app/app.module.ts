@@ -7,7 +7,7 @@ import { AppComponent } from "./app.component";
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: "starter" }),
         HttpModule,
         AppRoutingModule,
     ],
