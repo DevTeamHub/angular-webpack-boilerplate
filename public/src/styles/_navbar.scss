@@ -1,0 +1,181 @@
+
+
+nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  padding: 0 1rem;
+
+
+  .bars {
+    position: relative;
+    font-size: 5rem;
+    cursor: pointer;
+    padding: 2.5rem;
+    margin: .5rem 0;
+
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      background: #000;
+      box-shadow: 0 0.2em 0 0 #000, 0 0.4em 0 0 #000;
+      height: 2px;
+      left: 10px;
+      position: absolute;
+      top: 0.3em;
+      width: 0.6em;
+      opacity: .9;
+    }
+  }
+
+  .logo {
+    color: #000;
+    position: relative;
+    z-index: 5;
+    margin: 0 1rem;
+    padding: .9rem 0;
+    float: left;
+    font-family: 'Tinos', serif;
+    text-decoration: none;
+    display: none;
+
+    @media (min-width: 200px) {
+      display: block;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin: 0 4rem;
+
+      &:hover .devteam {
+        opacity: .9;
+        left: -15px;
+      }
+    }
+
+    .devteam {
+      left: -30px;
+      opacity: 0;
+      position: absolute;
+      top: 26px;
+      line-height: 2.5;
+      transition: opacity .5s, left .5s;
+
+      span {
+        font-size: 2.2rem;
+        line-height: 0;
+      }
+
+      p {
+        font-size: 1.3rem;
+        margin: -10px 0 0 2px;
+        line-height: 1;
+      }
+    }
+
+    .icon-devteam-tick {
+      font-size: 4rem;
+      position: relative;
+      line-height: .75;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 4.8rem;
+      }
+    }
+  }
+
+  > ul {
+    padding: 1.3rem 0;
+    margin: 0 0 0 auto;
+    display: none;
+
+
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 1.4rem 0;
+    }
+
+    li {
+      display: inline-block;
+      padding: 1rem;
+      cursor: pointer;
+
+      a {
+        color: #000;
+        font-size: 1.7rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Tinos', serif;
+      }
+    }
+  }
+
+}
+
+.mobile-menu {
+  display: none;
+  background: #131313;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 10;
+  top: 0;
+
+  &.active {
+    display: block;
+  }
+
+  .close {
+    right: 2rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 11;
+    position: absolute;
+    padding: 3rem;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      height: 50px;
+      width: 2px;
+      background-color: #fff;
+      top: 5px;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  ul {
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    li {
+      font-size: 2.5rem;
+      line-height: 1.5;
+
+      a {
+        text-transform: uppercase;
+        color: #CECECE;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+
+> angular-webpack-boilerplate@1.0.0 build:release D:\angular-webpack-boilerplate
+> npm run build:prod && npm run build:universal "-" "run" "server"
+
+
+> angular-webpack-boilerplate@1.0.0 build:prod D:\angular-webpack-boilerplate
+> npm run clean:browser && webpack --env=prod --config public/webpack.browser.js
+
+
+> angular-webpack-boilerplate@1.0.0 clean:browser D:\angular-webpack-boilerplate
+> rimraf dist/browser
+
+Hash: c76dcf0509c681666f36
+Version: webpack 3.10.0
+Time: 7469ms
+                                   Asset       Size  Chunks             Chunk Names
+   vendor.7a920a72dddf80b4bde4.bundle.js   41 bytes       0  [emitted]  vendor
+     main.b28d2165e5e6384a06bf.bundle.js   42 bytes       1  [emitted]  main
+polyfills.301fc936ce5495cffe36.bundle.js  479 bytes       2  [emitted]  polyfills
+                        angular-chunk.js    1.42 kB       3  [emitted]  angular-chunk
+                              index.html  866 bytes          [emitted]  
+                            img/temp.txt    0 bytes          [emitted]  
+                          fonts/temp.txt    0 bytes          [emitted]  
+   [0] ./src/polyfills.ts 0 bytes {2} [built]
+   [1] ./src/vendor.ts 0 bytes {0} [built]
+   [2] ./src/main.browser.ts 0 bytes {1} [built]
+
+ERROR in node_modules/@types/webpack/index.d.ts(471,38): error TS2694: Namespace '"D:/angular-webpack-boilerplate/node_modules/@types/tapable/index"' has no exported member 'Plugin'.
+
+Child html-webpack-plugin for "index.html":
+     1 asset
+       [0] ../node_modules/html-webpack-plugin/lib/loader.js!./src/index.html 607 bytes {0} [built]

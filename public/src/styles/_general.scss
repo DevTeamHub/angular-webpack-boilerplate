@@ -1,24 +1,22 @@
 html {
-    font-size: 62.5%;
-  }
-  
-  html, body {
-    height: 100%;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .clearfix::before,
-  .clearfix::after {
-    @include clearfix;
-  }
-  
-  body {
-    line-height: 1;
-  }
-  @-ms-viewport{
-    width:auto!important;
-  }
-  
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.2;
+  background-color: #f9f9f9;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}

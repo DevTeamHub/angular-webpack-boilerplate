@@ -1,0 +1,35 @@
+footer {
+  display: flex;
+  margin: 0 auto;
+  border-top: 1px solid #eee;
+  width: 100%;
+  max-width: 1000px;
+  flex-direction: column;
+  align-items: center;
+  padding: .5rem 1rem;
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  ul {
+    display: flex;
+    padding: .75rem 0;
+
+    a {
+      font-size: 1.5rem;
+      padding: 0 .75rem;
+      color: #545454;
+      transition: color .2s;
+
+      &:hover {
+        color: darken(#545454, 20%);
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

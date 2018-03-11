@@ -1,8 +1,65 @@
-<div>
-    <a [routerLink]="['/']">Home</a>
-    <a [routerLink]="['/', 'angular']">Angular</a>
-    <a [routerLink]="['/', 'webpack']">Webpack</a>
-</div>
-<div>
+<div class="wrapper">
+    <header>
+        <nav>
+            <span class="bars"></span>
+            <!--<a href="http://dev-team.com" target="_blank" class="logo">-->
+            <!--<div class="devteam">-->
+            <!--<span>de</span>-->
+            <!--<p>team</p>-->
+            <!--</div>-->
+            <!--<div class="icon-devteam-tick"></div>-->
+            <!--</a>-->
+            <ul>
+                <li>
+                    <a [routerLink]="['/']">Home</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/', 'angular']">Angular</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/', 'webpack']">Webpack</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-menu">
+            <span class="close"></span>
+            <ul>
+                <li>
+                    <a [routerLink]="['/']">Home</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/', 'angular']">Angular</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/', 'webpack']">Webpack</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
     <router-outlet></router-outlet>
+
+    <footer>
+        <ul>
+            <li>
+                <a href="">Get Started</a>
+            </li>
+            <li>
+                <a href="">Blog</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">Out team</a>
+            </li>
+            <li>
+                <a href="">Solutions</a>
+            </li>
+            <li>
+                <a href="">Contact Us</a>
+            </li>
+        </ul>
+    </footer>
 </div>
+

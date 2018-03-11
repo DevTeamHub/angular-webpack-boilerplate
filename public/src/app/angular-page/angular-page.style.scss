@@ -1,3 +1,87 @@
+@import "../../../../node_modules/bootstrap/scss/bootstrap-grid";
+
+:host {
+  flex-grow: 1;
+}
+
 p {
-  color: red;
+  font-size: 1.7rem;
+  line-height: 1.4;
+  padding: 1rem 1.5rem;
+  color: #444;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1rem 0;
+  width: 100%;
+  color: #444;
+
+  @include media-breakpoint-up(md) {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1rem 0;
+  width: 100%;
+  color: #444;
+
+  @include media-breakpoint-up(md) {
+    font-size: 3.5rem;
+  }
+}
+
+.angular-header {
+  background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), url('../../img/bg.jpg');
+  background-size: cover;
+  font-family: 'Tinos', serif;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  img {
+    max-width: 100%;
+    margin: 5rem auto 3rem;
+    display: block;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .btns-panel {
+    display: flex;
+    width: 100%;
+
+    button {
+      border-radius: 3px;
+      border: 1px solid #fff;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      transition: background-color .2s;
+      cursor: pointer;
+      margin: 2rem auto 4rem;
+      font-size: 1.5rem;
+
+      &:hover {
+        background-color: lighten(rgba(0, 0, 0, .4), 5%);
+      }
+    }
+  }
+}
+
+.angular-desc {
+  border-top: 2px solid #eee;
+  font-family: 'Tinos', serif;
+  padding: 2rem 0 0;
+
 }

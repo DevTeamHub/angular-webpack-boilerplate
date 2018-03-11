@@ -21,10 +21,11 @@
     "build:universal": "npm run build:server && npm run build:express",
     "build:release": "npm run build:prod && npm run build:universal",
     "server": "node dist/index.js",
-    "start": "webpack-dev-server --env=dev --config public/webpack.config.js --progress --profile --watch --content-base public/src/"
+    "start": "webpack-dev-server --env=dev --config public/webpack.browser.js --progress --profile --watch --content-base public/src/"
   },
   "dependencies": {
     "@angular/animations": "5.2.0",
+    "@angular/cdk": "^5.2.4",
     "@angular/common": "5.2.0",
     "@angular/compiler": "5.2.0",
     "@angular/compiler-cli": "5.2.0",
@@ -37,6 +38,8 @@
     "@angular/router": "5.2.0",
     "@nguniversal/express-engine": "5.0.0-beta.5",
     "@nguniversal/module-map-ngfactory-loader": "5.0.0-beta.5",
+    "aglio": "^2.3.0",
+    "bcrypt": "^1.0.3",
     "body-parser": "1.17.1",
     "bootstrap": "4.0.0-alpha.6",
     "compression": "1.6.2",
