@@ -16,6 +16,7 @@ module.exports = function () {
         },
         target: 'node',
         node: false,
+        mode: "none",
         module: {
             rules: [
                 { 

@@ -6,6 +6,7 @@ module.exports = {
   resolve: { extensions: ['.ts', '.js'] },
   context: __dirname,
   target: 'node',
+  mode: "none",
   externals: [/(node_modules|main\..*\.js)/],
   output: {
     path: path.join(__dirname, "..", "dist"),
