@@ -9,3 +9,12 @@
 * **universal:** Universal build for server side rendering is included. 
 * **lazy loading routes:** Universal build prepared for work with lazy routes.    
 * **production optimized build:** we have a lot of different plugins for production code optimizations, the list of plugins will be updated and improved in next versions to support all possible helpful webpack plugins and loaders.  
+
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/DevTeamHub/angular-webpack-boilerplate/compare/1.0.0...1.1.0) (2018-11-14)
+
+### Features
+
+* **angular 7:** Angular version has been pdated to use Angular 7
+* **webpack 4:** Angular version has been pdated to use Angular 4 
+* **universal:** Universal build for server side rendering is included. 

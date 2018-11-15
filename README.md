@@ -14,8 +14,8 @@ This Angular + Webpack starter provides custom webpack config for Angular / Webp
 
 ## Features
 
-1. Angular 5
-2. Webpack 3
+1. Angular 7
+2. Webpack 4
 3. AOT build
 4. Universal build
 5. Lazy loaded routes
