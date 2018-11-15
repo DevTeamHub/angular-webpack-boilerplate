@@ -19,6 +19,7 @@ module.exports = function (options) {
             path: path.resolve(__dirname, '../../dist/browser'),
             filename: "[name].[chunkhash].bundle.js"
         },
+        mode: "production",
         module: {
             rules: [
                 { 
@@ -73,7 +74,7 @@ module.exports = function (options) {
                 tsConfigPath: "./public/tsconfig.browser.json",
                 entryModule: './public/src/app/app.module#AppModule'              
             }),
-            new optimizer.PurifyPlugin(),
+            //new optimizer.PurifyPlugin(),
             new UglifyJSPlugin({
                 sourceMap: false,
                 uglifyOptions: {
@@ -93,7 +94,6 @@ module.exports = function (options) {
                 }
               }),
             new CompressionPlugin({ 
-                asset: "[path].gz[query]", 
                 algorithm: "gzip", 
                 test: /\.(js|html)$/, 
                 threshold: 10240, 
