@@ -4,7 +4,6 @@ import { join } from 'path';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import * as express from 'express';
-import { renderModuleFactory, platformDynamicServer } from "@angular/platform-server";
 import { enableProdMode } from "@angular/core";
 
 enableProdMode();

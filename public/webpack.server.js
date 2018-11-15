@@ -1,11 +1,7 @@
-const webpack = require("webpack");
 const path = require('path');
-const cssnano = require('cssnano');
 const autoprefixer = require('autoprefixer');
 const importer = require("postcss-import-url");
 const tools = require('@ngtools/webpack');
-const optimizer = require("@angular-devkit/build-optimizer");
-const helpers = require("./webpack/helpers");
 
 module.exports = function () {
     return {

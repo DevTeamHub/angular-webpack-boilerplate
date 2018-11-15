@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const importer = require("postcss-import-url");
@@ -63,6 +62,7 @@ module.exports = function (options) {
                 },
             ]
         },
+        mode: "development",
         devtool: "inline-source-map",
         devServer: {
             port: 9000,

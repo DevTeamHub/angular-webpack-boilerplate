@@ -3,7 +3,6 @@ const path = require('path');
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const multi = require("multi-loader");
 
 module.exports = function (options) {
     return {
@@ -46,16 +45,21 @@ module.exports = function (options) {
             }),
 
             new CopyWebpackPlugin([{ from: "./src/img", to: "./img" },
-                                   { from: "./src/fonts", to: "./fonts" }]),
-
-            new webpack.optimize.CommonsChunkPlugin({
-                name: "angular-chunk",
-                filename: "angular-chunk.js",
-                chunks: ["main", "vendor"]
-            }),
+            { from: "./src/fonts", to: "./fonts" }]),
 
             new webpack.DefinePlugin({ configuration: helpers.parseConfig(options) })
         ],
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    commons: {
+                        name: 'commons',
+                        chunks: 'initial',
+                        minChunks: 2
+                    }
+                }
+            }
+        },
         resolve: {
             extensions: [".ts", ".tsx", ".js"]
         }
