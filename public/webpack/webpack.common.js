@@ -33,6 +33,7 @@ module.exports = function (options) {
 
             new HtmlWebpackPlugin({
                 template: "./src/index.html",
+                title: "Angular webpack boilerplate",
                 minify: options.minify ? {
                     caseSensitive: true,
                     collapseWhitespace: true,
