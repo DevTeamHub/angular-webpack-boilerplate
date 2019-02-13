@@ -51,7 +51,8 @@ module.exports = function (options) {
                     use: [
                         { loader: "raw-loader" },
                         { loader: "html-minifier-loader", options: { caseSensitive: true } }
-                    ] 
+                    ],
+                    exclude: [path.resolve(__dirname, '../src/index.html')] 
                 },
                 {
                     test: /\.js$/,

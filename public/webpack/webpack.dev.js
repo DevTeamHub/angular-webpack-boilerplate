@@ -45,7 +45,8 @@ module.exports = function (options) {
                     test: /\.html$/, 
                     use: [
                         { loader: "raw-loader" }
-                    ] 
+                    ],
+                    exclude: [path.resolve(__dirname, '../src/index.html')]
                 },
                 { 
                     test: /\.ts$/, 
